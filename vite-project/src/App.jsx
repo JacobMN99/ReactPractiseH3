@@ -14,9 +14,9 @@ function App() {
         </button>
       </div>
 
-      <Header />
-      <InfoCard />
-      <Footer />
+      <Header headerText='Jacob Malthe Nielsen' />
+      <InfoCard hobby1='Gaming' hobby2='Padel' hobby3='Kode'/>
+      <Footer footertext='Jeg er 25 år gammel'/>
     </>
   );
 }

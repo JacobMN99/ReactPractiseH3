@@ -1,10 +1,10 @@
 import React from "react";
 import "./Footer.css";
 
-export default function Footer() {
+export default function Footer({footertext }) {
   return (
     <footer className="footer">
-      <p>Jeg er 25 år gammel</p>
+          <p>{footertext}</p>
     </footer>
   );
 }
