@@ -1,4 +1,9 @@
-li {
+.li {
     color: blue;
     font: italic;
+}
+
+.li2 {
+    color: red;
+    font: bold;
 }

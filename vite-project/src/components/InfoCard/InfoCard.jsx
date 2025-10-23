@@ -6,8 +6,8 @@ export default function InfoCard({hobby1, hobby2, hobby3 }) {
     <section className="info-card">
       <h2>Hobbyer</h2>
       <ul>
-        <li>{hobby1}</li>
-        <li>{hobby2}</li>
+        <li className='li'>{hobby1}</li>
+        <li className='li2'>{hobby2}</li>
         <li>{hobby3}</li>
       </ul>
     </section>
