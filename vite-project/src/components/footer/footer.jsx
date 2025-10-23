@@ -1,11 +1,10 @@
-import { Footer } from "./components/Footer/Footer";
+import React from "react";
+import "./Footer.css";
 
-function App() {
-    return (
-        <>
-            <Footer />
-        </>
-    );
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <p>Jeg er 25 år gammel</p>
+    </footer>
+  );
 }
-
-export default App;
