@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import InfoCard from "./components/InfoCard/InfoCard";
 import Footer from "./components/Footer/Footer";
@@ -7,6 +7,10 @@ import GridContainer from "./components/GridContainer/GridContainer";
 
 function App() {
   const [count, setCount] = useState(0);
+
+ useEffect(() => {
+  console.log(`Count changed: ${count}`);
+ }, [count]);
 
   const cards = Array.from({ length: 9 }, (_, i) => ({
     id: i,
