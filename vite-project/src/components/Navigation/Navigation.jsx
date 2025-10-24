@@ -8,6 +8,9 @@ function Navigation() {
       <NavLink to="/" end className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
         Home
       </NavLink>
+      <NavLink to="/products" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
+        Products
+      </NavLink>
       <NavLink to="/about" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>
         About
       </NavLink>
