@@ -1,57 +1,22 @@
-import { useState, useEffect } from "react";
-import Header from "./components/Header/Header";
-import InfoCard from "./components/InfoCard/InfoCard";
-import Footer from "./components/Footer/Footer";
-import Card from "./components/Card/Card";
-import GridContainer from "./components/GridContainer/GridContainer";
+import React from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import MainLayout from "./components/MainLayout/MainLayout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function App() {
-  const [count, setCount] = useState(0);
-
- useEffect(() => {
-  console.log(`Count changed: ${count}`);
- }, [count]);
-
-  const cards = Array.from({ length: 9 }, (_, i) => ({
-    id: i,
-    title: `Product ${i + 1}`,
-    image: "",
-    price: `$${(i + 1) * 5}`,
-    description: `This is a short description for product ${i + 1}.`,
-    buttonText: "Buy",
-  }));
-
   return (
-    <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Current count: {count}    
-        </button>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count * 0)}>
-          Reset count
-        </button>
-      </div>
-
-      <Header headerText="Jacob Malthe Nielsen" />
-      <InfoCard hobby1="Gaming" hobby2="Padel" hobby3="Kode" />
-
-      <GridContainer>
-        {cards.map((c) => (
-          <Card
-            key={c.id}
-            title={c.title}
-            image={c.image}
-            price={c.price}
-            description={c.description}
-            buttonText={c.buttonText}
-          />
-        ))}
-      </GridContainer>
-
-      <Footer footertext="Jeg er 25 år gammel" />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
