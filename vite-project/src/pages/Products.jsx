@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import GridContainer from "../components/GridContainer/GridContainer";
 import ProductCard from "../components/ProductCard/ProductCard";
 
@@ -29,23 +30,27 @@ function Products() {
     };
   }, []);
 
-    if (loading)
-        return <p>Loading products...</p>;
-    if (error)
-        return <p>Error: {error}</p>;
+  if (loading) return <p>Loading products...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>
       <h2>Products</h2>
       <GridContainer>
         {products.map((p) => (
-          <ProductCard
+          <Link
             key={p.id}
-            title={p.title}
-            price={p.price}
-            description={p.description}
-            images={p.images}
-          />
+            to={`/products/${p.id}`}
+            className="product-link"
+            onClick={() => console.log("Link clicked:", p.id)}
+          >
+            <ProductCard
+              title={p.title}
+              price={p.price}
+              description={p.description}
+              images={p.images}
+            />
+          </Link>
         ))}
       </GridContainer>
     </>
